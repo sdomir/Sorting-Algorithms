@@ -1,5 +1,5 @@
 public class InsertionSort {
-    public int[] sortArray(int[] nums) {
+    public void sortArray(int[] nums) {
         for (int i = 1; i < nums.length; i++) {
             int pos = i - 1;
             int key = nums[i];
@@ -9,6 +9,5 @@ public class InsertionSort {
             }
             nums[pos + 1] = key;
         }
-        return nums;
     }
 }
