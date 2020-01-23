@@ -1,18 +1,26 @@
 import java.util.*;
-public class SelectionSort {
-    public void sortArray(int [] nums) {
-        for(int i=0;i<nums.length-1;i++) {
+public class SelectionSort extends Sort {
+
+    SelectionSort(int[] arr) {
+        unsorted = new ArrayList<>();
+        for(int i=0;i<arr.length;i++)
+            unsorted.add(arr[i]);
+    }
+
+    public void sortArray() {
+        for(int i=0;i < unsorted.size()-1;i++) {
             int min = i;
-                for (int j = i; j < nums.length; j++) {
-                    if (nums[j] < nums[min])
-                        min = j;
-                }
-                swap(nums, i, min);
+            for (int j = i; j < unsorted.size(); j++) {
+                if(unsorted.get(j) < unsorted.get(min))
+                    min = j;
             }
+            swap(i, min);
         }
-    public void swap(int[] arr, int i,int j) {
-        int temp = arr[i];
-        arr[i]=arr[j];
-        arr[j]=temp;
+    }
+
+    public void swap(int i,int j) {
+        int temp = unsorted.get(i);
+        unsorted.set(i,unsorted.get(j));
+        unsorted.set(j,temp);
     }
 }

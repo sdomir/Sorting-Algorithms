@@ -2,19 +2,24 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Welcome to the Sorting World!");
-        int[] arr = {5,7,3,6,2,1,4};
-        /*
-        SelectionSort selSort = new SelectionSort();
-        selSort.sortArray(arr);
-        print(arr,"Selection Sort");
+        int[] arr = {5,7,3,6,2,1,4,2};
 
-        InsertionSort inSort = new InsertionSort();
-        inSort.sortArray(arr);
-        print(arr,"Insertion Sort");
-        */
-        MergeSort inSort = new MergeSort();
-        inSort.sortArray(arr);
-        print(arr,"Merge Sort");
+        Sort selSort = new SelectionSort(arr);
+        selSort.sortArray();
+        selSort.print("Selection Sort");
+
+        Sort inSort = new InsertionSort(arr);
+        inSort.sortArray();
+        inSort.print("Insertion Sort");
+
+        Sort merSort = new MergeSort(arr);
+        merSort.print("Before Merge Sort");
+        merSort.sortArray();
+        merSort.print("Merge Sort");
+
+        Sort qSort = new QuickSort(arr);
+        qSort.sortArray();
+        qSort.print("Quick Sort");
     }
     public static void print(int[] arr, String message) {
         System.out.println(message);
