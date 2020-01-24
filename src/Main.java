@@ -20,6 +20,10 @@ public class Main {
         Sort qSort = new QuickSort(arr);
         qSort.sortArray();
         qSort.print("Quick Sort");
+
+        Sort hSort = new HeapSort(arr);
+        hSort.sortArray();
+        hSort.print("Heap Sort");
     }
     public static void print(int[] arr, String message) {
         System.out.println(message);
